@@ -7,7 +7,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
 <link rel="stylesheet" href="assets/css/about-us.css">
 
 @section('banner')
-<div class="banner-section" style="padding-bottom: 10%;">
+<div class="banner-section" style="padding-bottom: 3%;">
     <h1 class="heading skew-up">Services</h1>
     <p class="description">
         <a href="/">Home</a> <i class="fa-solid fa-chevron-right"></i> Services
@@ -17,7 +17,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
 
 @section('content')
 
-<section class="question-ans">
+<section class="question-ans" style="padding-top: 3%;padding-bottom:3%;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
@@ -61,7 +61,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="about-area" style="background-color: #050505ff;">
+<section class="about-area" style="background-color: #050505ff;padding-top: 3%;padding-bottom:3%;">
     <div class="container position-relative z-1">
         <div class="row">
             <div class="col-12 col-lg-5">
@@ -95,7 +95,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="question-ans">
+<section class="question-ans" style="padding-top: 2%;padding-bottom:3%;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
@@ -139,7 +139,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="about-area" style="background-color: #050505ff;">
+<section class="about-area" style="background-color: #050505ff;padding-top: 3%;padding-bottom:3%;">
     <div class="container position-relative z-1">
         <div class="row">
             <div class="col-12 col-lg-5">
@@ -179,7 +179,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="question-ans">
+<section class="question-ans" style="padding-top: 3%;padding-bottom:3%;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
@@ -224,7 +224,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="about-area" style="background-color: #050505ff;">
+<section class="about-area" style="background-color: #050505ff;padding-top: 3%;padding-bottom:3%;">
     <div class="container position-relative z-1">
         <div class="row">
             <div class="col-12 col-lg-5">
@@ -257,7 +257,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="question-ans">
+<section class="question-ans" style="padding-top: 3%;padding-bottom:3%;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
@@ -302,7 +302,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="about-area" style="background-color: #050505ff;">
+<section class="about-area" style="background-color: #050505ff;padding-top: 3%;padding-bottom:3%;">
     <div class="container position-relative z-1">
         <div class="row">
             <div class="col-12 col-lg-5">
@@ -335,7 +335,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<div class="banner" style="background-color: #050505ff;">
+<div class="banner" style="background-color: #050505ff;padding-top: 3%;padding-bottom:1%;">
     <div class="banner-img" style="background-image: url('assets/images/service/s9.png');">
         <div class="overlay">
             <div class="banner-section">
