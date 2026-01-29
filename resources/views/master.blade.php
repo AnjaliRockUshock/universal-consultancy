@@ -257,7 +257,7 @@
 
     @yield('content')
     <!-- footer -->
-    <footer class="footer">
+    <footer class="footer" style="padding-top: 4%;">
       <div class="left-img">
         <img src="assets/images/footer-left-img.png" alt="">
       </div>
