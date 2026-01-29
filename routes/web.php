@@ -44,3 +44,7 @@ Route::get('/academic-honorary-recognition', function () {
 Route::get('/global-partnerships', function () {
     return view('global-partnerships');
 });
+
+Route::get('/check', function () {
+    return view('l');
+});
