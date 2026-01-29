@@ -7,7 +7,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
 <link rel="stylesheet" href="assets/css/contact.css">
 
 @section('banner')
-<div class="banner-section" style="padding-bottom: 10%;">
+<div class="banner-section" style="padding-bottom: 3%;">
     <h1 class="heading skew-up">Contact Us</h1>
     <p class="description">
         <a href="/">Home</a> <i class="fa-solid fa-chevron-right"></i> Contact Us
@@ -17,7 +17,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
 
 @section('content')
 
-<div class="service-details">
+<div class="service-details" style="padding: top 3%;padding: bottom 3%;">
     <div class="animated-circle right"></div>
     <div class="animated-circle left"></div>
     <div class="container">
