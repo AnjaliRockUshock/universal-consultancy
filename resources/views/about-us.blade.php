@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="assets/css/about-us.css">
 
 @section('banner')
-<div class="banner-section" style="padding-bottom: 10%;">
+<div class="banner-section" style="padding-bottom: 4%;">
     <h1 class="heading skew-up">About <br> Universal Consulting Group</h1>
     <p class="description" style="font-size: 16px;">Your gateway to global excellence, leadership growth, and recognition.</p>
     <p class="description">
@@ -21,7 +21,7 @@
 
 @section('content')
 
-<section class="why-choose-us" style="background-color: #0e1916;">
+<section class="why-choose-us" style="background-color: #0e1916;padding-top: 6%; padding-bottom: 6%;">
     <div class="animated-circle left"></div>
     <div class="container position-relative z-1">
         <div class="row">
@@ -109,7 +109,7 @@
     </div>
 </section>
 
-<section class="business-partner">
+<section class="business-partner" style="padding-top: 3%;padding-bottom: 3%;">
     <div class="animated-circle right"></div>
     <div class="container position-relative z-1">
         <div class="row">
@@ -656,8 +656,7 @@
     </div>
 </section>
 
-
-<section class="build-website">
+<section class="build-website" style="padding-top: 3%;padding-bottom: 3%">
     <div class="overlay"></div>
     <div class="row position-relative z-1">
         <div class="col-12">
@@ -730,7 +729,7 @@
     </div>
 </section>
 
-<section class="question-ans">
+<section class="question-ans" style="padding-top: 3%;padding-bottom: 3%" >
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
@@ -752,7 +751,7 @@
     </div>
 </section>
 
-<section class="question-ans" style="background-color: #050505ff;">
+<section class="question-ans" style="background-color: #050505ff;padding-top: 3%;padding-bottom: 3%">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
