@@ -8,7 +8,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
 
 @section('banner')
 
-<div class="banner-section" style="padding-bottom: 10%;">
+<div class="banner-section" style="padding-bottom: 3%;">
     <h1 class="heading skew-up">Transform Your Achievements into a Global Legacy</h1>
     <p class="description">Earn an Honorary Doctorate from an internationally recognized university. Celebrating your contributions, achievements, and leadership across industries and borders.</p>
     <p class="description">
@@ -26,7 +26,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
 
 @section('content')
 
-<section class="why-choose-us" style="background-color: #0e1916;">
+<section class="why-choose-us" style="background-color: #0e1916;padding-top: 3%;padding-bottom: 3%;">
     <div class="animated-circle left"></div>
     <div class="container position-relative z-1">
         <div class="row">
@@ -69,7 +69,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="why-choose-us">
+<section class="why-choose-us" style="padding-top: 3%;padding-bottom: 3%;">
     <div class="animated-circle left"></div>
     <div class="container position-relative z-1">
         <div class="row">
@@ -95,7 +95,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
                         Your Bridge to Global <br>
                         Recognition
                     </h1>
-                    <p>
+                    <p style="padding-top: 3%;">
                         With over 14 years of experience, The Universal Consulting Group acts as a trusted bridge between distinguished achievers and globally accredited universities.
                     </p>
                     <p>
@@ -129,7 +129,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="about-area" style="background-color: #050505ff;">
+<section class="about-area" style="background-color: #050505ff;padding-top: 3%;padding-bottom: 3%;">
     <div class="container position-relative z-1">
         <div class="row">
             <div class="col-12 col-lg-5">
@@ -167,7 +167,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="question-ans">
+<section class="question-ans" style="padding-top: 3%;padding-bottom: 3%;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
@@ -207,7 +207,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="about" style="background-color: #fff;">
+<section class="about" style="background-color: #fff;padding-top: 3%;padding-bottom: 3%;">
     <div class="animated-circle left"></div>
     <div class="container position-relative z-3">
         <div class="row align-items-center">
@@ -234,7 +234,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
                 <div class="position-relative">
                     <div class="img">
                         <div class="img-1 wow overlay-anim zoom-effect">
-                            <img class="img-fluid w-100 " src="assets/images/honory-doctrate/after-before.png" alt="">
+                            <img class="img-fluid w-100 " src="assets/images/honory-doctrate/after-before1.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -243,7 +243,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="why-choose-us">
+<section class="why-choose-us" style="padding-top: 3%;padding-bottom: 3%;">
     <div class="animated-circle left"></div>
     <div class="container position-relative z-1">
         <div class="row">
@@ -310,7 +310,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
                             <h2>● Greater personal and professional credibility</h2>
                         </div>
                     </div>
-                    <div class="section-title">
+                    <div class="section-title" style="padding-top: 10%;">
                         <p>
                             Your story of success deserves to be recognized on a global
                             stage — and The Universal Consulting Group is here to make
@@ -323,7 +323,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="question-ans" style="background-color: #050505ff;">
+<section class="question-ans" style="background-color: #050505ff;padding-top:3%;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
@@ -430,7 +430,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
     </div>
 </section>
 
-<section class="build-website" style="background-image: url('{{ asset('assets/images/honory-doctrate/img4.png') }}');">
+<section class="build-website" style="background-image: url('{{ asset('assets/images/honory-doctrate/img4.png') }}');padding-top: 3%;padding-bottom: 5%;">
     <div class="overlay"></div>
     <div class="row position-relative z-1">
         <div class="col-12">
