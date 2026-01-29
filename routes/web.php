@@ -48,3 +48,7 @@ Route::get('/global-partnerships', function () {
 Route::get('/check', function () {
     return view('l');
 });
+
+Route::get('/detailed', function () {
+    return view('detailed');
+});
