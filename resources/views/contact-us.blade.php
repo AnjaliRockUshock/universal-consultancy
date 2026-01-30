@@ -111,7 +111,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
                                     </div>
                                     <div class="col-12 col-lg-10">
                                         <p style="color: #8b8b8b;">Office Address</p>
-                                        <span style="font-size: medium;">Head Office:Ankleshwar, Gujarat</span>
+                                        <span style="font-size: medium;">Head Office:S - 24, Star Galleria Mall, Primanak Naka, Ankleshwar, Gujarat, India Pin Code 393001</span>
                                     </div>
                                 </div>
                             </div>

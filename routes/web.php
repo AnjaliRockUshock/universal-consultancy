@@ -52,3 +52,7 @@ Route::get('/check', function () {
 Route::get('/detailed', function () {
     return view('detailed');
 });
+
+Route::get('/expert-details/{id}', function ($id) {
+    return view('expert-detailed', compact('id'));
+});

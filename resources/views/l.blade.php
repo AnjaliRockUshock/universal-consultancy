@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brainz 500 Global Awards 2025</title>
+    <title>The Global Experts Board</title>
     <style>
         /* --- Root & Reset --- */
         :root {
@@ -267,7 +267,7 @@
             <span></span>
         </div>
 
-        <div class="logo">BRAINZ.</div>
+        <div class="logo">The Universal Consultancy</div>
 
         <nav>
             <a href="#">Subscribe</a>
@@ -276,11 +276,11 @@
     </header>
 
     <section class="hero">
-        <h1>BRAINZ 500<br>GLOBAL AWARDS</h1>
+        <h1>The Global Experts Board</h1>
         <p>
-            We've listed 500 of the best companies and influential leaders in business today,
-            who deserve to be recognized for their entrepreneurial success, achievements,
-            and dedication to helping others.
+            The Universal Consulting Group Experts Board brings together distinguished leaders, strategists, and
+            innovators from across the globe. Each member is carefully selected for their expertise, impact, and
+            commitment to guiding businesses toward sustainable growth and transformation.
         </p>
     </section>
 
