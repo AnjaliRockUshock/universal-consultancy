@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expert Profile | The Universal Consultancy</title>
     <style>
+
+         .hero {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(3, 10, 16, 0.6), rgba(3, 10, 16, 0.9)),
+                url('assets/images/expert/b.avif');
+            background-size: cover;
+            background-position: center;
+            padding: 0 20px;
+        }
+
         /* --- Root & Reset --- */
         :root {
             --bg-dark: #030a10;
@@ -51,12 +68,14 @@
 
         /* --- Profile Header --- */
         .profile-header {
-            background-color: var(--primary-red);
+            background: linear-gradient(rgba(3, 10, 16, 0.6), rgba(3, 10, 16, 0.9)),
+                url('../assets/images/expert/b.avif');
             color: white;
             padding: 120px 10% 60px;
             display: flex;
             align-items: center;
             gap: 40px;
+            
         }
 
         .profile-image {

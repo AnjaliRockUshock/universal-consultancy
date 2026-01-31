@@ -29,7 +29,7 @@ Route::get('/business-consulting', function () {
     return view('business-consulting');
 });
 
-Route::get('/leadership-executive-coaching', function () {
+Route::get('/global-experts-board', function () {
     return view('leadership-executive-coaching');
 });
 
