@@ -5,172 +5,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Global Experts Board</title>
-   <style>
-    /* --- Root & Reset --- */
-    :root {
-        --bg-dark: #030a10;
-        --card-bg: #0a1622;
-        --text-muted: #94a3b8;
-        --accent-white: #ffffff;
-    }
+    <style>
+        /* --- Root & Reset --- */
+        :root {
+            --bg-dark: #030a10;
+            --card-bg: #0a1622;
+            --text-muted: #94a3b8;
+            --accent-white: #ffffff;
+        }
 
-    * {
-        box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: var(--bg-dark);
-        font-family: 'Inter', sans-serif;
-        color: var(--accent-white);
-        overflow-x: hidden;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            font-family: 'Inter', sans-serif;
+            color: var(--accent-white);
+            overflow-x: hidden;
+        }
 
-    /* --- Navigation --- */
-    .navbar {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 25px 50px;
-        z-index: 100;
-    }
+        /* --- Navigation --- */
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            z-index: 100;
+        }
 
-    .navbar .logo {
-        font-size: 20px;
-        font-weight: 900;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
+         .navbar nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
 
-    .menu-icon {
-        width: 30px;
-        height: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        cursor: pointer;
-    }
+         .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
 
-    .menu-icon span {
-        display: block;
-        height: 3px;
-        width: 100%;
-        background-color: var(--accent-white);
-    }
 
-    /* --- Sidebar & Overlay --- */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: -300px;
-        width: 300px;
-        height: 100%;
-        background-color: var(--card-bg);
-        z-index: 1000;
-        transition: 0.4s ease;
-        padding: 50px 30px;
-    }
-    .sidebar.active { left: 0; }
-    .overlay {
-        position: fixed;
-        display: none;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.7);
-        z-index: 999;
-    }
-    .overlay.active { display: block; }
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    /* --- Hero Section --- */
-    .hero {
-        height: 60vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background: linear-gradient(rgba(3,10,16,0.8), rgba(3,10,16,1)), url('assets/images/expert/b.avif');
-        background-size: cover;
-        padding: 0 20px;
-    }
+        .menu-icon {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
 
-    .hero h1 { font-size: 50px; text-transform: uppercase; margin: 0; }
-    .hero p { max-width: 700px; color: #cbd5e1; margin-top: 20px; }
+        .menu-icon span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--accent-white);
+        }
 
-    /* --- THE FIX: FORCING 4 PER ROW WITH ANCHOR TAGS --- */
-    .main-content {
-        margin-top: -120px;
-        padding: 0 20px 100px;
-    }
+        /* --- Sidebar & Overlay --- */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: var(--card-bg);
+            z-index: 1000;
+            transition: 0.4s ease;
+            padding: 50px 30px;
+        }
 
-    .awards-panel {
-        background-color: var(--card-bg);
-        border-radius: 40px;
-        padding: 60px 30px;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
+         .sidebar .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
 
-    .flex-centered-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* This centers 3 items or the leftover 2 items */
-        gap: 20px;
-        width: 100%;
-    }
+        .sidebar.active {
+            left: 0;
+        }
 
-    /* We target the <a> tag because it is the direct child of the flex container */
-    .flex-centered-grid > a {
-        flex: 0 0 calc(25% - 20px); /* Forces exactly 4 per row */
-        text-decoration: none;
-        color: inherit;
-        display: block; /* Makes the anchor behave like a box */
-    }
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 50px;
+        }
 
-    .honoree-card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.3s ease;
-    }
 
-    .honoree-card:hover {
-        transform: translateY(-10px);
-    }
+        .sidebar-links a {
+            color: rgb(216, 26, 13);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    .portrait-container {
-        width: 100%;
-        aspect-ratio: 3 / 4;
-        border-radius: 20px;
-        overflow: hidden;
-        margin-bottom: 15px;
-        background-color: #000;
-    }
+        .overlay {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
 
-    .portrait-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+        .overlay.active {
+            display: block;
+        }
 
-    .honoree-info h3 { font-size: 18px; margin: 0 0 5px 0; }
-    .honoree-info p { font-size: 13px; color: var(--text-muted); margin: 0; }
+        /* --- Hero Section --- */
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(3, 10, 16, 0.8), rgba(3, 10, 16, 1)), url('assets/images/expert/b.avif');
+            background-size: cover;
+            padding: 0 20px;
+        }
 
-    /* --- Responsive Breaks --- */
-    @media (max-width: 1024px) {
-        .flex-centered-grid > a { flex: 0 0 calc(50% - 20px); } /* 2 per row on tablets */
-    }
+        .hero h1 {
+            font-size: 50px;
+            text-transform: uppercase;
+            margin: 0;
+        }
 
-    @media (max-width: 600px) {
-        .flex-centered-grid > a { flex: 0 0 100%; } /* 1 per row on mobile */
-    }
-</style>
+        .hero p {
+            max-width: 700px;
+            color: #cbd5e1;
+            margin-top: 20px;
+        }
+
+        /* --- THE FIX: FORCING 4 PER ROW WITH ANCHOR TAGS --- */
+        .main-content {
+            margin-top: -120px;
+            padding: 0 20px 100px;
+        }
+
+        .awards-panel {
+            background-color: var(--card-bg);
+            border-radius: 40px;
+            padding: 60px 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .flex-centered-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* This centers 3 items or the leftover 2 items */
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* We target the <a> tag because it is the direct child of the flex container */
+        .flex-centered-grid>a {
+            flex: 0 0 calc(25% - 20px);
+            /* Forces exactly 4 per row */
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            /* Makes the anchor behave like a box */
+        }
+
+        .honoree-card {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .honoree-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .portrait-container {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background-color: #000;
+        }
+
+        .portrait-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .honoree-info h3 {
+            font-size: 18px;
+            margin: 0 0 5px 0;
+        }
+
+        .honoree-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* --- Responsive Breaks --- */
+        @media (max-width: 1024px) {
+            .flex-centered-grid>a {
+                flex: 0 0 calc(50% - 20px);
+            }
+
+            /* 2 per row on tablets */
+        }
+
+        @media (max-width: 600px) {
+            .flex-centered-grid>a {
+                flex: 0 0 100%;
+            }
+
+            /* 1 per row on mobile */
+        }
+    </style>
 </head>
 
 <body>
@@ -194,7 +269,7 @@
             <span></span>
         </div>
 
-        <div class="logo">The Universal Consulting Group</div>
+        <div class="logo"><a href="/">The Universal Consulting Group</a></div>
 
         <nav>
             <a href="#">Subscribe</a>
