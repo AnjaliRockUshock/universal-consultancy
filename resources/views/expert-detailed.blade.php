@@ -179,7 +179,7 @@
 <body>
 
     <header class="navbar">
-        <div class="logo">The Universal Consulting Group</div>
+        <div class="logo"><a href="/">The Universal Consulting Group</a></div>
         <nav><a href="javascript:history.back()">← Back to Board</a></nav>
     </header>
 
