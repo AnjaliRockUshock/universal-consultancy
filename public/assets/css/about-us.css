@@ -1094,7 +1094,7 @@ Author url: https://themeforest.net/user/website_stock
   justify-content: flex-start;
   gap: 70px;
   padding-top: 30px;
-  margin-bottom: -13%;
+  margin-bottom: -10%;
 }
 @media (max-width: 1200px) {
   .about-area .about-timing .about-timing-item {

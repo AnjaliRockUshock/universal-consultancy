@@ -78,7 +78,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
                     storytelling to visibility and influence, we help you become a recognized authority in
                     your domain.
                 </p>
-                <h1 class="split-collab" style="color: #d90a2c;margin-bottom:-4%">Key Focus:</h1>
+                <h1 class="split-collab" style="color: #d90a2c;margin-bottom:-4%;padding-top:73px;">Key Focus:</h1>
                 <div class="about-timing">
                     <div class="about-timing-item">
                         <p>● Adds international prestige to your professional identity</p>
@@ -155,7 +155,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
                     Helping leaders, innovators, and professionals gain global recognition from
                     internationally accredited universities for their lifelong contributions and achievements.
                 </p>
-                <h1 class="split-collab" style="color: #d90a2c;margin-bottom:-4%">Key Focus:</h1>
+                <h1 class="split-collab" style="color: #d90a2c;margin-bottom:-4%;padding-top:73px;">Key Focus:</h1>
                 <div class="about-timing">
                     <div class="about-timing-item">
                         <p>● Global honorary doctorate nominations</p>
@@ -240,7 +240,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
                     Appear on the world’s leading magazines and digital media platforms. Our partnerships
                     enable features, interviews, and cover stories that strengthen credibility and reach.
                 </p>
-                <h1 class="split-collab" style="color: #d90a2c;margin-bottom:-4%">Key Focus:</h1>
+                <h1 class="split-collab" style="color: #d90a2c;margin-bottom:-4%;padding-top:73px;">Key Focus:</h1>
                 <div class="about-timing">
                     <div class="about-timing-item">
                         <p>● Magazine & TV interviews</p>
@@ -318,7 +318,7 @@ $bannerImage = 'assets/images/honory-doctrate/banner.png';
                     Supporting universities, training institutions, and educators with academic branding,
                     program development, and student engagement strategies.
                 </p>
-                <h1 class="split-collab" style="color: #d90a2c;margin-bottom:-4%">Key Focus:</h1>
+                <h1 class="split-collab" style="color: #d90a2c;margin-bottom:-4%;padding-top:73px;">Key Focus:</h1>
                 <div class="about-timing">
                     <div class="about-timing-item">
                         <p>● Curriculum design & accreditation</p>
