@@ -602,7 +602,7 @@
 
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="team-card">
-                    <img src="assets/images/about-us/user/u3.jpg" style="height: 480px;" alt="Himanshu Pandey" class="team-card-image">
+                    <img src="assets/images/about-us/user/u3.jpg" style="height: 564px;" alt="Himanshu Pandey" class="team-card-image">
                     <a href="https://www.linkedin.com/in/himanshu-pandey-755776375" class="linkedin-badge" aria-label="LinkedIn Profile">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
@@ -615,7 +615,7 @@
 
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="team-card">
-                    <img src="assets/images/about-us/user/u1.png" style="height: 450px;" alt="Shubham Sharma" class="team-card-image">
+                    <img src="assets/images/about-us/user/u1.png" style="height: 545px;" alt="Shubham Sharma" class="team-card-image">
                     <a href="https://www.linkedin.com/in/shubham-sharma-366521222/" class="linkedin-badge" aria-label="LinkedIn Profile">
                         <i class="fab fa-linkedin-in"></i>
                     </a>

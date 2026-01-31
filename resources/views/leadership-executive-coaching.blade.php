@@ -5,245 +5,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Global Experts Board</title>
-    <style>
-        /* --- Root & Reset --- */
-        :root {
-            --bg-dark: #030a10;
-            --card-bg: #0a1622;
-            --text-muted: #94a3b8;
-            --accent-white: #ffffff;
-        }
+   <style>
+    /* --- Root & Reset --- */
+    :root {
+        --bg-dark: #030a10;
+        --card-bg: #0a1622;
+        --text-muted: #94a3b8;
+        --accent-white: #ffffff;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+        box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-dark);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: var(--accent-white);
-            overflow-x: hidden;
-        }
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-dark);
+        font-family: 'Inter', sans-serif;
+        color: var(--accent-white);
+        overflow-x: hidden;
+    }
 
-        /* --- Navigation --- */
-        .navbar {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 50px;
-            z-index: 100;
-        }
+    /* --- Navigation --- */
+    .navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 50px;
+        z-index: 100;
+    }
 
-        .menu-icon {
-            width: 30px;
-            height: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-        }
+    .navbar .logo {
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
 
-        .menu-icon span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background-color: var(--accent-white);
-            border-radius: 2px;
-        }
+    .menu-icon {
+        width: 30px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
 
-        .navbar .logo {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
+    .menu-icon span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: var(--accent-white);
+    }
 
-        .navbar nav {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
+    /* --- Sidebar & Overlay --- */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: var(--card-bg);
+        z-index: 1000;
+        transition: 0.4s ease;
+        padding: 50px 30px;
+    }
+    .sidebar.active { left: 0; }
+    .overlay {
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: 999;
+    }
+    .overlay.active { display: block; }
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-        }
+    /* --- Hero Section --- */
+    .hero {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(rgba(3,10,16,0.8), rgba(3,10,16,1)), url('assets/images/expert/b.avif');
+        background-size: cover;
+        padding: 0 20px;
+    }
 
-        /* --- SIDEBAR MENU --- */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            /* Hidden by default */
-            width: 300px;
-            height: 100%;
-            background-color: var(--card-bg);
-            z-index: 1000;
-            transition: 0.4s ease-in-out;
-            padding: 50px 30px;
-            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
-        }
+    .hero h1 { font-size: 50px; text-transform: uppercase; margin: 0; }
+    .hero p { max-width: 700px; color: #cbd5e1; margin-top: 20px; }
 
-        .sidebar.active {
-            left: 0;
-            /* Slide in */
-        }
+    /* --- THE FIX: FORCING 4 PER ROW WITH ANCHOR TAGS --- */
+    .main-content {
+        margin-top: -120px;
+        padding: 0 20px 100px;
+    }
 
-        .sidebar .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            color: var(--text-muted);
-        }
+    .awards-panel {
+        background-color: var(--card-bg);
+        border-radius: 40px;
+        padding: 60px 30px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
 
-        .sidebar-links {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin-top: 50px;
-        }
+    .flex-centered-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* This centers 3 items or the leftover 2 items */
+        gap: 20px;
+        width: 100%;
+    }
 
-        .sidebar-links a {
-            color: rgb(216, 26, 13);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    /* We target the <a> tag because it is the direct child of the flex container */
+    .flex-centered-grid > a {
+        flex: 0 0 calc(25% - 20px); /* Forces exactly 4 per row */
+        text-decoration: none;
+        color: inherit;
+        display: block; /* Makes the anchor behave like a box */
+    }
 
-        /* --- Overlay when menu is open --- */
-        .overlay {
-            position: fixed;
-            display: none;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 999;
-        }
+    .honoree-card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+    }
 
-        .overlay.active {
-            display: block;
-        }
+    .honoree-card:hover {
+        transform: translateY(-10px);
+    }
 
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(3, 10, 16, 0.6), rgba(3, 10, 16, 0.9)),
-                url('assets/images/expert/b.avif');
-            background-size: cover;
-            background-position: center;
-            padding: 0 20px;
-        }
+    .portrait-container {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        background-color: #000;
+    }
 
-        .hero h1 {
-            font-size: clamp(40px, 10vw, 90px);
-            line-height: 0.9;
-            margin: 0;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-        }
+    .portrait-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-        .hero p {
-            max-width: 800px;
-            margin: 30px auto;
-            font-size: clamp(14px, 2vw, 18px);
-            line-height: 1.6;
-            color: #d1d5db;
-        }
+    .honoree-info h3 { font-size: 18px; margin: 0 0 5px 0; }
+    .honoree-info p { font-size: 13px; color: var(--text-muted); margin: 0; }
 
-        /* --- Content Panel --- */
-        .main-content {
-            position: relative;
-            margin-top: -100px;
-            z-index: 10;
-            padding: 0 40px 100px;
-        }
+    /* --- Responsive Breaks --- */
+    @media (max-width: 1024px) {
+        .flex-centered-grid > a { flex: 0 0 calc(50% - 20px); } /* 2 per row on tablets */
+    }
 
-        .awards-panel {
-            background-color: var(--card-bg);
-            border-radius: 40px;
-            padding: 60px 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .flex-centered-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .honoree-card {
-            width: 220px;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .honoree-card:hover {
-            transform: translateY(-12px);
-        }
-
-        .portrait-container {
-            width: 100%;
-            aspect-ratio: 3 / 4;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            background-color: #111;
-        }
-
-        .portrait-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .honoree-info h3 {
-            font-size: 18px;
-            font-weight: 800;
-            margin: 0 0 5px 0;
-        }
-
-        .honoree-info p {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 20px;
-            }
-
-            .honoree-card {
-                width: 160px;
-            }
-        }
-    </style>
+    @media (max-width: 600px) {
+        .flex-centered-grid > a { flex: 0 0 100%; } /* 1 per row on mobile */
+    }
+</style>
 </head>
 
 <body>
@@ -267,7 +194,7 @@
             <span></span>
         </div>
 
-        <div class="logo">The Universal Consultancy</div>
+        <div class="logo">The Universal Consulting Group</div>
 
         <nav>
             <a href="#">Subscribe</a>
@@ -300,7 +227,7 @@
                     </div>
                 </a>
 
-               <a href="{{ url('/expert-details/gemma') }}" style="text-decoration: none; color: inherit;">
+                <a href="{{ url('/expert-details/gemma') }}" style="text-decoration: none; color: inherit;">
                     <div class="honoree-card">
                         <div class="portrait-container">
                             <img src="assets/images/expert/expert2.jpeg" alt="Gemma Rubio Rodrigo">
