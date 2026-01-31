@@ -4,10 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Profile | The Universal Consultancy</title>
-    <style>
+    <title>Expert Profile | The Universal Consulting Group</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-         .hero {
+    <style>
+        /* ... your existing CSS ... */
+
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            color: #0a1622;
+            /* LinkedIn Blue */
+            text-decoration: none;
+            background: white;
+            padding: 10px 13px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .linkedin-link:hover {
+            transform: scale(1.05);
+            background: #f0f7ff;
+        }
+
+        .linkedin-link i {
+            font-size: 18px;
+        }
+    </style>
+    <style>
+        .hero {
             position: relative;
             width: 100%;
             height: 90vh;
@@ -75,7 +104,7 @@
             display: flex;
             align-items: center;
             gap: 40px;
-            
+
         }
 
         .profile-image {
@@ -150,7 +179,7 @@
 <body>
 
     <header class="navbar">
-        <div class="logo">The Universal Consultancy</div>
+        <div class="logo">The Universal Consulting Group</div>
         <nav><a href="javascript:history.back()">← Back to Board</a></nav>
     </header>
 
@@ -160,6 +189,9 @@
             <h1 id="expertName">Expert Name</h1>
             <p id="expertTagline">Designation</p>
             <p id="expertSubline" style="font-style: italic; font-size: 14px; max-width: 500px; color: #ffccd5;"></p>
+            <a id="expertLinkedin" href="#" target="_blank" class="linkedin-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
         </div>
     </section>
 
@@ -213,7 +245,10 @@
                 Jelena’s vision aligns seamlessly with the mission of the Universal Consulting Group: to democratize access to integrated, world-class expertise. She envisions a future where leadership is defined by strategic empathy, ethical grounding, and continuous learning. Through the Experts Board, she is committed to empowering the next generation of leaders—especially women—to build businesses and dialogues that are as globally competitive as they are purpose-driven.
                 
                 Her work transforms individual potential into collective progress.`,
-                quote: `"Leadership isn't about having all the answers; it's about creating shared understanding."`
+                quote: `"Leadership isn't about having all the answers; it's about creating shared understanding."`,
+
+                linkedin: "https://www.linkedin.com/in/jelena-sokic-8-jsmastermind/?originalSubdomain=ch"
+           
             },
 
             "gemma": {
@@ -252,7 +287,9 @@
                 What sets Gemma apart is her ability to translate complexity into clarity. She does not simply teach leaders what to say—she equips them with the awareness to understand when, why, and how to communicate for maximum impact. Her work ensures that strategy is not only intelligent, but also human.
 
                 Aligned with the mission of the Universal Consulting Group Experts Board, Gemma envisions a future where leadership is guided by insight, empathy, and behavioural intelligence. By contributing her expertise to this global ecosystem, she aims to empower leaders—especially women—to operate with precision, confidence, and ethical influence, transforming communication into a catalyst for sustainable growth and meaningful connection.`,
-                quote: `"I treat balance as a leadership responsibility, not a personal luxury. Recovery isn't a reward for hard work; it's the infrastructure that sustains performance."`
+                quote: `"I treat balance as a leadership responsibility, not a personal luxury. Recovery isn't a reward for hard work; it's the infrastructure that sustains performance."`,
+
+                linkedin: "https://www.linkedin.com/in/gemmarubio/?originalSubdomain=es"
             },
 
             "david": {
@@ -279,7 +316,9 @@
 
                 From the streets of New York to induction into the National Fitness Hall of Fame, David Lyons’ story proves that what is meant to break us can become the foundation of our greatest impact. Through the Universal Consulting Group Experts Board, he brings a rare fusion of leadership, lived experience, and transformational methodology—empowering individuals and communities worldwide to rise beyond circumstance and reclaim their strength.`,
                 expertise: ``,
-                quote: `"I treat balance as a leadership responsibility, not a personal luxury. Recovery isn't a reward for hard work; it's the infrastructure that sustains performance"`
+                quote: `"I treat balance as a leadership responsibility, not a personal luxury. Recovery isn't a reward for hard work; it's the infrastructure that sustains performance"`,
+
+                linkedin: "https://www.linkedin.com/in/david-lyons-61989b16/"
             }
         };
 
@@ -298,6 +337,14 @@
                 document.getElementById('expertName').innerText = data.name;
                 document.getElementById('expertTagline').innerText = data.tagline;
                 document.getElementById('expertSubline').innerText = data.subline;
+
+                const linkBtn = document.getElementById('expertLinkedin');
+                if (data.linkedin) {
+                    linkBtn.href = data.linkedin;
+                    linkBtn.style.display = "inline-flex"; // Show if exists
+                } else {
+                    linkBtn.style.display = "none"; // Hide if empty
+                }
 
                 // Use Laravel's base path for images to prevent broken links
                 document.getElementById('expertImg').src = window.location.origin + '/' + data.img;
