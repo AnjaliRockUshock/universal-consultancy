@@ -148,7 +148,7 @@
             justify-content: center;
             text-align: center;
             background: linear-gradient(rgba(3, 10, 16, 0.6), rgba(3, 10, 16, 0.9)),
-                url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2066&auto=format&fit=crop');
+                url('assets/images/expert/b.avif');
             background-size: cover;
             background-position: center;
             padding: 0 20px;
