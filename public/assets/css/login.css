@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0b1111;
+    /* Matches the dark background in your image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #1f2929;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: #ffffff;
+    /* Slightly lighter dark for the card */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #1f2929;
+    text-align: center;
+}
+
+.logo-section {
+    margin-bottom: 25px;
+}
+
+.logo {
+    height: 71px;
+    width: 163px;
+    /* Adjust based on your logo size */
+    margin-bottom: 10px;
+}
+
+.brand-name {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ccc;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #bbb;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: #0b1111;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #e31e24;
+    /* Red border on focus */
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 25px;
+    color: #bbb;
+}
+
+.forgot-link {
+    color: #e31e24;
+    text-decoration: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e31e24;
+    /* Matches the "Get Started" button red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #b3171b;
+}
+
+.footer-text {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #888;
+}
+
+.footer-text a {
+    color: #e31e24;
+    text-decoration: none;
+}
