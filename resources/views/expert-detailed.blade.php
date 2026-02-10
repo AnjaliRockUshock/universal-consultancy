@@ -184,14 +184,16 @@
     </header>
 
     <section class="profile-header">
-        <img id="expertImg" src="" alt="Expert" class="profile-image">
+        <img id="expertImg" src="{{ '../' . $expert->img }}" alt="Expert" class="profile-image">
         <div class="header-text">
-            <h1 id="expertName">Expert Name</h1>
-            <p id="expertTagline">Designation</p>
-            <p id="expertSubline" style="font-style: italic; font-size: 14px; max-width: 500px; color: #ffccd5;"></p>
-            <a id="expertLinkedin" href="#" target="_blank" class="linkedin-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
+            <h1 id="expertName">{{$expert->name}}</p>
+                <p id="expertTagline">{{$expert->tagline}}</p>
+                <p id="expertSubline" style="font-style: italic; font-size: 14px; max-width: 500px; color: #ffccd5;">
+                    {{$expert->subline}}
+                </p>
+                <a id="expertLinkedin" href="{{$expert->linkedin}}" target="_blank" class="linkedin-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
         </div>
     </section>
 
@@ -199,7 +201,7 @@
         <div class="section-title">
             <h2>About</h2>
         </div>
-        <div id="expertBio" class="content-text"></div>
+        <div id="expertBio" class="content-text">{{ $expert->bio }}</div>
 
         <!-- <div class="section-title">
             <h2>Key Expertise</h2>
@@ -210,7 +212,7 @@
             <h2>Quotes</h2>
         </div>
 
-        <div id="expertQuote" class="quote-box"></div>
+        <div id="expertQuote" class="quote-box">{{ $expert->quote }}</div>
     </main>
 
     <script>
@@ -248,7 +250,7 @@
                 quote: `"Leadership isn't about having all the answers; it's about creating shared understanding."`,
 
                 linkedin: "https://www.linkedin.com/in/jelena-sokic-8-jsmastermind/?originalSubdomain=ch"
-           
+
             },
 
             "gemma": {
@@ -324,42 +326,7 @@
 
         // 2. Logic to fill the page
         // 2. Logic to fill the page
-        function loadExpert() {
-            // This splits the URL path into an array: ["", "expert-details", "jelena"]
-            const pathSegments = window.location.pathname.split('/');
-
-            // This grabs the last segment (the ID)
-            const id = pathSegments[pathSegments.length - 1];
-
-            const data = expertData[id];
-
-            if (data) {
-                document.getElementById('expertName').innerText = data.name;
-                document.getElementById('expertTagline').innerText = data.tagline;
-                document.getElementById('expertSubline').innerText = data.subline;
-
-                const linkBtn = document.getElementById('expertLinkedin');
-                if (data.linkedin) {
-                    linkBtn.href = data.linkedin;
-                    linkBtn.style.display = "inline-flex"; // Show if exists
-                } else {
-                    linkBtn.style.display = "none"; // Hide if empty
-                }
-
-                // Use Laravel's base path for images to prevent broken links
-                document.getElementById('expertImg').src = window.location.origin + '/' + data.img;
-
-                document.getElementById('expertBio').innerText = data.bio;
-                document.getElementById('expertExpertise').innerText = data.expertise;
-                document.getElementById('expertQuote').innerText = data.quote;
-                document.title = data.name + " | Profile";
-            } else {
-                // This runs if the 'id' from the URL doesn't match 'jelena', 'sadhguru', or 'bozoma'
-                document.querySelector('main').innerHTML = "<h1 style='text-align:center; padding:50px;'>Expert profile '" + id + "' not found.</h1>";
-            }
-        }
-
-        window.onload = loadExpert;
+       
     </script>
 </body>
 

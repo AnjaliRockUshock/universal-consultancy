@@ -39,13 +39,13 @@
             z-index: 100;
         }
 
-         .navbar nav {
+        .navbar nav {
             display: flex;
             gap: 25px;
             align-items: center;
         }
 
-         .navbar a {
+        .navbar a {
             color: white;
             text-decoration: none;
             font-size: 14px;
@@ -89,7 +89,7 @@
             padding: 50px 30px;
         }
 
-         .sidebar .close-btn {
+        .sidebar .close-btn {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -271,10 +271,7 @@
 
         <div class="logo"><a href="/">The Universal Consulting Group</a></div>
 
-        <nav>
-            <a href="#">Subscribe</a>
-            <span style="cursor: pointer; font-size: 18px;">🔍</span>
-        </nav>
+       
     </header>
 
     <section class="hero">
@@ -289,42 +286,21 @@
     <main class="main-content">
         <div class="awards-panel">
             <div class="flex-centered-grid">
+                @foreach ($experts as $expert)
+                    <a href="{{ route('expert.details', $expert->id ) }}" style="text-decoration: none; color: inherit;">
+                        <div class="honoree-card">
+                            <div class="portrait-container">
+                                <img src="{{ $expert->img}}" alt="Jelena Sokic">
+                            </div>
+                            <div class="honoree-info">
+                                <h3>{{ $expert->name}}</h3>
+                                <p>{{ $expert->designation}}</p>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
 
-                <a href="{{ url('/expert-details/jelena') }}" style="text-decoration: none; color: inherit;">
-                    <div class="honoree-card">
-                        <div class="portrait-container">
-                            <img src="assets/images/expert/expert1.jpeg" alt="Jelena Sokic">
-                        </div>
-                        <div class="honoree-info">
-                            <h3>Jelena Sokic</h3>
-                            <p>Founder & CEO, JSMasterMind | Executive Strategist</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="{{ url('/expert-details/gemma') }}" style="text-decoration: none; color: inherit;">
-                    <div class="honoree-card">
-                        <div class="portrait-container">
-                            <img src="assets/images/expert/expert2.jpeg" alt="Gemma Rubio Rodrigo">
-                        </div>
-                        <div class="honoree-info">
-                            <h3>Gemma Rubio Rodrigo</h3>
-                            <p>Founder, Define The Fine | Strategic Communication & Behavioural Insights Expert</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="{{ url('/expert-details/david') }}" style="text-decoration: none; color: inherit;">
-                    <div class="honoree-card">
-                        <div class="portrait-container">
-                            <img src="assets/images/expert/expert3.jpeg" alt="David Lyons">
-                        </div>
-                        <div class="honoree-info">
-                            <h3>David Lyons</h3>
-                            <p> Founder & Director, OptimalBody Fitness | Founder, MS Fitness Challenge Charity</p>
-                        </div>
-                    </div>
-                </a>
+             
             </div>
         </div>
     </main>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GlobalClientController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,9 +30,7 @@ Route::get('/business-consulting', function () {
     return view('business-consulting');
 });
 
-Route::get('/global-experts-board', function () {
-    return view('leadership-executive-coaching');
-});
+Route::get('/global-experts-board', [GlobalClientController::class, 'expertList'])->name('global-clients.index');
 
 Route::get('/branding-advisory', function () {
     return view('branding-advisory');
@@ -53,6 +52,14 @@ Route::get('/detailed', function () {
     return view('detailed');
 });
 
-Route::get('/expert-details/{id}', function ($id) {
-    return view('expert-detailed', compact('id'));
+Route::get('/expert-details/{id}',[GlobalClientController::class, 'show'])->name('expert.details');
+
+Route::get('/login', function () {
+    return view('login');
 });
+
+Route::get('/global-clients-list', [GlobalClientController::class, 'index'])->name('global-clients.index');
+
+Route::get('/global-clients-create', [GlobalClientController::class, 'createExpertView'])->name('global-clients.create');
+
+Route::post('/global-clients-create', [GlobalClientController::class, 'createExpert'])->name('global-clients.store');
